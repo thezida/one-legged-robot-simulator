@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  gazebo_ros
 )
 
 ## System dependencies are found with CMake's conventions
@@ -103,10 +104,11 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES one-legged-robot-simulator
-#  CATKIN_DEPENDS roscpp rospy std_msgs
-#  DEPENDS system_lib
+  DEPENDS
+      gazebo_ros
+  CATKIN_DEPENDS
+  INCLUDE_DIRS
+  LIBRARIES
 )
 
 ###########
@@ -118,6 +120,8 @@ catkin_package(
 include_directories(
 # include
   ${catkin_INCLUDE_DIRS}
+  ${GAZEBO_INCLUDE_DIRS}
+  ${SDFormat_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
