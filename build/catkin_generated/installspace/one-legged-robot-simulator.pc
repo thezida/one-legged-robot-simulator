@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: one-legged-robot-simulator
+Description: Description of one-legged-robot-simulator
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: gazebo_ros

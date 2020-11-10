@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/martindzida/Diplomski/ros_ws/devel/include/**",
+                "/opt/ros/melodic/include/**",
+                "/home/martindzida/Diplomski/ros_ws/src/odrive-ros-publisher/include/**",
+                "/home/martindzida/Diplomski/ros_ws/src/one-legged-robot-simulator/include/**",
+                "/home/martindzida/Diplomski/ros_ws/src/optoforce-ros-pusblisher/include/**",
+                "/home/martindzida/Diplomski/ros_ws/src/optoforce_torque_test/include/**",
+                "/usr/include/**"
+            ],
+            "name": "ROS",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "gnu++14"
+        }
+    ],
+    "version": 4
+}

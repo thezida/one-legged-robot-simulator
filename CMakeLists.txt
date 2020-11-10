@@ -7,11 +7,13 @@ project(one-legged-robot-simulator)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
+set(gazebo_DIR "/usr/lib/x86_64-linux-gnu/cmake/gazebo")
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
   gazebo_ros
+  gazebo REQUIRED
 )
 
 ## System dependencies are found with CMake's conventions
@@ -124,6 +126,11 @@ include_directories(
   ${SDFormat_INCLUDE_DIRS}
 )
 
+link_directories(${GAZEBO_LIBRARY_DIRS})
+list(APPEND CMAKE_CXX_FLAGS "${GAZEBO_CXX_FLAGS}")
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
+
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/one-legged-robot-simulator.cpp
@@ -208,3 +215,7 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+add_library(gazebo_model_controller SHARED src/gazebo_model_controller.cpp)
+target_link_libraries(gazebo_model_controller ${GAZEBO_LIBRARIES})
+

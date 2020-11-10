@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/martindzida/Diplomski/ros_ws/src/one-legged-robot-simulator/cmake-build-debug/devel/setup.sh
